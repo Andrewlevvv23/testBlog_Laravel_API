@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/posts') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                    Тестовий Блог
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -75,16 +75,6 @@
                 </div>
             </div>
         </nav>
-
-        <div class="container"><!-- /.col -->
-            <div class="d-flex justify-content-between mt-2">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('home')}}"> Головна </a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('posts.index')}}"> Список постів </a></li>
-                    <li class="breadcrumb-item active"> сторінка </li>
-                </ol>
-            </div>
-        </div>
 
 
         <main class="py-4">
