@@ -8,8 +8,10 @@
                 <p>{{ $post->body }}</p>
                 <p>Дата публікації: {{ $post->created_at }}</p>
             </div>
+            @if ($post->file)
+                <p class="ms-3">Прикріплений файл: <a href="{{ asset('uploads/' . $post->file) }}">{{ $post->file }}</a></p>
+            @endif
         </div>
-
         <h2 class="mt-4">Комментарі користувачів:</h2>
         <ul>
             @foreach($post->comments as $comment)
