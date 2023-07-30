@@ -12,7 +12,7 @@ Route::prefix('api')->group(function () {
 });
 
 // Основні ресурсні контроллери CRUD-ів по постам та коментарям
-Route::resource('posts',  PostController::class)->withTrashed();
+Route::resource('posts',  PostController::class)->middleware(['auth.check']);
 Route::resource('comments',  CommentController::class)->withTrashed();
 
 // Стартова сторінка після аутентифікації та сторінка перегляду особистих коментарів юзера

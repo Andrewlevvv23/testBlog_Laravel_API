@@ -7,12 +7,13 @@
 
             @foreach($comments as $comment)
                 <div class="mt-4">
+                    @if ($comment->post)
                     <h5>
                         Пост №{{ $comment->post->id }}.
                         <a href="{{route('posts.show', $comment->post->id)}}"> "{{ $comment->body }}".  </a>
                     </h5>
                         Дата створення:  {{ $comment->created_at }}<br><br>
-
+                    @endif
                 </div>
             @endforeach
         </div>
