@@ -14,24 +14,35 @@
             </div>
         </div>
 
-            @foreach($posts as $post)
-                <div class="card mt-3">
-                    <div class="card-header">
-                        Пост № {{ $post->id }}.
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"> - {{ $post->title }} </h5>
-                        <p class="card-text"> {{ $post->body }} </p>
-                        <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary m-2"> Переглянути пост </a>
-                        <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success m-2"> Редагувати пост </a>
-                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="btn m-1">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger" type="submit"> Видалити пост </button>
-                        </form>
-                    </div>
+        @foreach($posts as $post)
+            <div class="card mt-3">
+                <div class="card-header">
+                    Пост № {{ $post->id }}.
                 </div>
-            @endforeach
+                <div class="card-body">
+                    <h5 class="card-title custom-text-shadow"> - {{ $post->title }} </h5>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="card-text"> {{ $post->body }} </p>
+                        </div>
+                        @if ($post->image)
+                            <div class="col-md-2">
+                                <img src="{{ asset($post->image) }}" alt="Зображення поста" width="200" class="img-thumbnail">
+                            </div>
+                        @endif
+                    </div>
+                    <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary m-2"> Переглянути пост </a>
+                    <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success m-2"> Редагувати пост </a>
+                    <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="btn m-1">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit"> Видалити пост </button>
+                    </form>
+                </div>
+            </div>
+        @endforeach
+
+
         <div class="mt-4 d-flex justify-content-center">
             {{ $posts->links() }}
         </div>

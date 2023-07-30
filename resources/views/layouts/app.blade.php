@@ -12,7 +12,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    <style>
+        .custom-text-shadow {
+            text-shadow: 0 0 15px rgba(100, 149, 237, 0.8); /* Горизонтальное смещение, вертикальное смещение, радиус размытия, цвет тени */
+        }
+    </style>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
